@@ -1,246 +1,395 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support - Kammunicate</title>
+    <title>Support — Kammunicate</title>
+    <meta name="description" content="Support and help for the Kammunicate AAC communication app by Christopher Hardy.">
+    <meta name="robots" content="index, follow">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #1d1d1f;
+            --color-text-secondary: #515154;
+            --color-accent: #0071e3;
+            --color-accent-hover: #0077ED;
+            --color-border: #d2d2d7;
+            --color-surface: #f5f5f7;
+            --color-card: #fbfbfd;
+            --color-green: #34c759;
+            --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --max-width: 780px;
+            --radius: 12px;
         }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #000000;
+                --color-text: #f5f5f7;
+                --color-text-secondary: #a1a1a6;
+                --color-accent: #2997ff;
+                --color-accent-hover: #64b5ff;
+                --color-border: #38383a;
+                --color-surface: #1c1c1e;
+                --color-card: #1c1c1e;
+                --color-green: #30d158;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f7;
-            padding: 20px;
+            font-family: var(--font-system);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.58;
+            -webkit-font-smoothing: antialiased;
         }
-        .container {
-            max-width: 800px;
+
+        .site-header {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background: rgba(255,255,255,0.72);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .site-header { background: rgba(0,0,0,0.72); }
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        h1 {
-            color: #1d1d1f;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            border-bottom: 3px solid #007aff;
-            padding-bottom: 15px;
+
+        .header-brand {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
         }
-        h2 {
-            color: #1d1d1f;
-            font-size: 1.8em;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            border-left: 4px solid #007aff;
-            padding-left: 15px;
+
+        .header-meta {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
         }
+
+        .content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 56px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--color-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .hero-icon svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .section { margin-bottom: 48px; }
+
+        h2.section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
         h3 {
-            color: #424245;
-            font-size: 1.3em;
-            margin-top: 25px;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 12px;
         }
+
         p {
-            margin-bottom: 15px;
-            color: #1d1d1f;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            line-height: 1.65;
         }
-        ul {
-            margin-left: 30px;
-            margin-bottom: 15px;
+
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
         }
+
         li {
             margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.55;
         }
-        .highlight {
-            background-color: #e8f4ff;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #007aff;
-            margin: 20px 0;
+
+        li strong { font-weight: 600; }
+
+        .info-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin: 16px 0;
         }
-        .contact-box {
-            background-color: #f0f0f5;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 30px 0;
+
+        .info-card p:last-child { margin-bottom: 0; }
+
+        .contact-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 32px;
             text-align: center;
+            margin: 32px 0;
         }
-        .contact-box h2 {
+
+        .contact-card h3 {
             margin-top: 0;
-            border: none;
-            padding: 0;
+            font-size: 1.25rem;
         }
-        .email-button {
+
+        .contact-card .email-link {
             display: inline-block;
-            background-color: #007aff;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-top: 15px;
-            transition: background-color 0.3s;
+            color: var(--color-accent);
+            text-decoration: none;
+            padding: 12px 32px;
+            border: 2px solid var(--color-accent);
+            border-radius: 980px;
+            margin-top: 16px;
+            transition: all 0.2s;
         }
-        .email-button:hover {
-            background-color: #0051d5;
-        }
-        a {
-            color: #007aff;
+
+        .contact-card .email-link:hover {
+            background: var(--color-accent);
+            color: #fff;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
         }
-        footer {
+
+        a:hover { text-decoration: underline; }
+
+        .faq-item {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+        }
+
+        .faq-item h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .faq-item p {
+            margin-bottom: 0;
+            color: var(--color-text-secondary);
+        }
+
+        .site-footer {
             text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #d2d2d7;
-            color: #86868b;
-            font-size: 0.9em;
+            padding: 32px 24px 48px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.7;
         }
+
+        .site-footer p { font-size: 0.8rem; }
+
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
-            h1 {
-                font-size: 2em;
-            }
+            .hero h1 { font-size: 1.75rem; }
+            .hero .subtitle { font-size: 1rem; }
+            h2.section-title { font-size: 1.25rem; }
+            .content { padding: 32px 20px 60px; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Kammunicate Support</h1>
-        <p style="font-size: 1.2em; color: #86868b;">We're here to help you get the most out of Kammunicate.</p>
 
-        <h2>Frequently Asked Questions</h2>
+    <header class="site-header">
+        <div class="header-inner">
+            <span class="header-brand">Christopher Hardy</span>
+            <span class="header-meta">Support</span>
+        </div>
+    </header>
 
-        <h3>Getting Started</h3>
-        <p><strong>Q: How do I create an avatar for each player?</strong></p>
-        <p>A: Long-press on the circular avatar button in the center toolbar. You can create letter avatars (A-Z), icon avatars (50+ symbols), or photo avatars using your camera or photo library. Each player can have their own personalized avatar.</p>
+    <main class="content">
 
-        <p><strong>Q: How do I set player names?</strong></p>
-        <p>A: Tap the Settings icon (gear) in the toolbar, then scroll to "Player Names & Roles." You can customize names for both players. Default names are "Person" and "Carer."</p>
-
-        <p><strong>Q: How do I switch between players?</strong></p>
-        <p>A: Tap the Send button (paper airplane) to send your current message and switch to the other player. The active player is indicated by a blue ring around their avatar.</p>
-
-        <h3>Using the Drawing Canvas</h3>
-        <p><strong>Q: How do I change drawing tools?</strong></p>
-        <p>A: Tap the brush icon in the toolbar to switch between Brush and Eraser. Long-press to access additional tool options.</p>
-
-        <p><strong>Q: How do I change colors?</strong></p>
-        <p>A: Tap the rainbow color wheel button to open the color picker. Choose from preset colors or create custom colors.</p>
-
-        <p><strong>Q: Can I undo mistakes?</strong></p>
-        <p>A: Yes! Use the undo button (curved arrow) to undo your last action. You can undo multiple times. There's also a redo button to restore undone actions.</p>
-
-        <h3>Communication Cards</h3>
-        <p><strong>Q: How do the smart card suggestions work?</strong></p>
-        <p>A: Kammunicate uses six different machine learning systems running on your device to suggest relevant cards based on your usage patterns, time of day, recent messages, and drawings. The more you use it, the smarter it gets!</p>
-
-        <p><strong>Q: How do I choose a card?</strong></p>
-        <p>A: Tap any card in the dock at the bottom to select it. The card will appear on your canvas. You can browse more cards by tapping the grid icon.</p>
-
-        <p><strong>Q: Can I create custom cards?</strong></p>
-        <p>A: Currently, Kammunicate comes with 200+ pre-made communication cards. Custom card creation may be added in future updates.</p>
-
-        <h3>Photos and Media</h3>
-        <p><strong>Q: How do I add photos to messages?</strong></p>
-        <p>A: Tap the photo icon (camera) in the toolbar. You can take a new photo with your camera or select an existing photo from your library.</p>
-
-        <p><strong>Q: How do I add stickers?</strong></p>
-        <p>A: Tap the sticker icon (smiley face) to browse and add expressive stickers to your canvas.</p>
-
-        <h3>Communication History</h3>
-        <p><strong>Q: How do I view past messages?</strong></p>
-        <p>A: Tap the History icon (clock) to see all previous messages. You can scroll through the timeline and see who sent what and when.</p>
-
-        <p><strong>Q: Can I delete old messages?</strong></p>
-        <p>A: Yes, long-press on any message in the history to delete it.</p>
-
-        <h3>Privacy & Data</h3>
-        <p><strong>Q: Is my data safe?</strong></p>
-        <p>A: Absolutely! Kammunicate processes all data 100% on your device. Nothing is sent to external servers. No internet connection is required. Read our full <a href="index.html">Privacy Policy</a>.</p>
-
-        <p><strong>Q: What happens to my data if I delete the app?</strong></p>
-        <p>A: All data is permanently deleted when you remove the app from your device. Make sure to save any important communications before deleting.</p>
-
-        <p><strong>Q: Is my data backed up?</strong></p>
-        <p>A: Your Kammunicate data is included in your device's iCloud or iTunes backups if you have backup enabled in your device settings.</p>
-
-        <h3>Professional Features</h3>
-        <p><strong>Q: What is the Professional Learning Dashboard?</strong></p>
-        <p>A: This feature provides caregivers and professionals with insights into communication patterns, frequently used topics, and engagement metrics. Access it by tapping the chart icon in the toolbar.</p>
-
-        <p><strong>Q: What are player roles?</strong></p>
-        <p>A: You can assign roles to each player (Needs Expresser or Support Provider). This helps the app provide more relevant card suggestions for each person's role.</p>
-
-        <h3>Accessibility Features</h3>
-        <p><strong>Q: What is Easy Read mode?</strong></p>
-        <p>A: Easy Read mode simplifies the interface with larger buttons and clearer labels. Enable it in Settings → Accessibility.</p>
-
-        <p><strong>Q: Does Kammunicate work with VoiceOver?</strong></p>
-        <p>A: Kammunicate includes accessibility labels for screen readers. We continuously work to improve accessibility features.</p>
-
-        <h3>Technical Issues</h3>
-        <p><strong>Q: The app isn't responding. What should I do?</strong></p>
-        <p>A: Try these steps in order:</p>
-        <ul>
-            <li>Close and reopen the app</li>
-            <li>Restart your device</li>
-            <li>Make sure you have the latest version from the App Store</li>
-            <li>If problems persist, contact support (see below)</li>
-        </ul>
-
-        <p><strong>Q: I lost my unsaved work. Can I recover it?</strong></p>
-        <p>A: Kammunicate automatically saves drafts every 5 seconds while you're drawing. If the app closes unexpectedly, your draft should be restored when you reopen it.</p>
-
-        <p><strong>Q: What iOS version do I need?</strong></p>
-        <p>A: Kammunicate requires iOS 15.0 or later to take advantage of the latest machine learning and accessibility features.</p>
-
-        <h2>Need More Help?</h2>
-
-        <div class="contact-box">
-            <h2>Contact Support</h2>
-            <p>Can't find the answer you're looking for? We're here to help!</p>
-            <p>Email us at:</p>
-            <a href="mailto:support@example.com" class="email-button">chriswhardy@me.com</a>
-            <p style="margin-top: 20px; font-size: 0.9em; color: #86868b;">We typically respond within 24-48 hours.</p>
+        <div class="hero">
+            <div class="hero-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-3.5h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
+            </div>
+            <h1>Support</h1>
+            <p class="subtitle">Kammunicate &mdash; Augmentative and Alternative Communication for iPad</p>
         </div>
 
-        <h2>Feature Requests & Feedback</h2>
-        <p>We love hearing from our users! If you have ideas for new features or improvements, please email us. Your feedback helps make Kammunicate better for everyone.</p>
+        <div class="contact-card">
+            <h3>Need Help?</h3>
+            <p>We're here to help you get the most out of Kammunicate. If you have any questions, encounter any issues, or would like to provide feedback, please get in touch.</p>
+            <a href="mailto:chriswhardy@me.com" class="email-link">chriswhardy@me.com</a>
+        </div>
 
-        <h2>Report a Bug</h2>
-        <p>Found a bug? Please report it by email with the following information:</p>
-        <ul>
-            <li>Your device model (e.g., iPad Pro 12.9-inch)</li>
-            <li>iOS version (found in Settings → General → About)</li>
-            <li>Kammunicate version (found in Settings → About)</li>
-            <li>Steps to reproduce the issue</li>
-            <li>Screenshots if possible</li>
-        </ul>
+        <div class="section">
+            <h2 class="section-title">Getting Started</h2>
 
-        <h2>Resources</h2>
-        <ul>
-            <li><a href="index.html">Privacy Policy</a></li>
-            <li><a href="https://github.com/yourusername/kammunicate">GitHub Repository</a> (optional - only if you make it public)</li>
-            <li>Tutorial: Available within the app on first launch</li>
-        </ul>
+            <h3>What is Kammunicate?</h3>
+            <p>Kammunicate is an augmentative and alternative communication (AAC) app designed for iPad. It helps individuals with communication disabilities express their needs, thoughts, and feelings through drawings, communication cards, photos, stickers, and more.</p>
 
-        <footer>
-            <p>© 2026 Kammunicate. All rights reserved.</p>
-            <p style="margin-top: 10px;"><a href="index.html">Privacy Policy</a></p>
-        </footer>
-    </div>
+            <h3>Who is Kammunicate for?</h3>
+            <p>Kammunicate is designed for individuals who may have difficulty communicating verbally, and their support providers or carers. It is suitable for people of all ages and is designed to be accessible and easy to use.</p>
+
+            <h3>What do I need to get started?</h3>
+            <ul>
+                <li>An iPad running iOS 18 or later</li>
+                <li>Apple Pencil is recommended but not required (you can use finger input)</li>
+                <li>No account creation, email address, or password is needed</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Does Kammunicate require an internet connection?</h3>
+                <p>No. All core features work completely offline. An internet connection is only needed for the optional Remote Carer feature, which allows a support person on another device to communicate remotely.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is my data private and secure?</h3>
+                <p>Yes. All data is stored locally on your device. We do not collect, transmit, or share any of your personal information. The app contains zero third-party code or tracking. For full details, please see our <a href="kammunicate-privacy.html">Privacy Policy</a>.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I set up the Remote Carer feature?</h3>
+                <p>Open the Remote Carer settings in Kammunicate on the iPad, then create a pairing invitation. This generates a QR code and a 6-character code. Your remote carer scans or enters the code in the Kampanion app on their iPhone or iPad. No email or password is required.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I use Kammunicate with a child?</h3>
+                <p>Yes. Kammunicate is designed for individuals of all ages with communication disabilities. We recommend that parents or guardians supervise its use by children. No personal data leaves the device.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I delete my data?</h3>
+                <p>You can delete individual messages by long-pressing on them in the communication history. You can remove custom avatars through the avatar settings. To delete all data, simply remove the app from your device.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What permissions does the app need?</h3>
+                <p>Kammunicate may request access to your camera (for photos and QR code scanning), photo library (to add photos to messages), microphone (for voice messages), and Apple Music (for background music). All permissions are optional and can be managed in your device's Settings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>The app seems slow or unresponsive. What should I do?</h3>
+                <p>Try closing and reopening the app. If the issue persists, restart your iPad. If you continue to experience problems, please contact us with details about what you were doing when the issue occurred.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How do I update the app?</h3>
+                <p>Kammunicate is updated through the App Store. You can enable automatic updates in your device's Settings, or manually check for updates in the App Store.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Troubleshooting</h2>
+
+            <h3>Remote Carer not connecting</h3>
+            <ul>
+                <li>Ensure both devices have an active internet connection</li>
+                <li>Check that both devices are signed into iCloud</li>
+                <li>Verify the pairing code has not expired (codes are valid for 24 hours)</li>
+                <li>Try creating a new pairing invitation</li>
+            </ul>
+
+            <h3>Camera or microphone not working</h3>
+            <ul>
+                <li>Go to <strong>Settings &gt; Kammunicate</strong> on your device</li>
+                <li>Ensure the relevant permission is enabled</li>
+                <li>If the permission toggle is on but the feature still does not work, try restarting the app</li>
+            </ul>
+
+            <h3>Communication history missing</h3>
+            <ul>
+                <li>Communication history is stored locally on your device</li>
+                <li>If you deleted and reinstalled the app, history will not be recoverable unless you restored from a device backup</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Contact Us</h2>
+            <p>If you need further assistance, have feature suggestions, or want to report a bug, please contact us at:</p>
+            <div class="info-card">
+                <p><strong>Email:</strong> <a href="mailto:chriswhardy@me.com">chriswhardy@me.com</a><br>
+                <strong>Developer:</strong> Christopher Hardy</p>
+            </div>
+            <p>We aim to respond to all enquiries within 48 hours. When reporting a bug, please include:</p>
+            <ul>
+                <li>Your iPad model and iOS version</li>
+                <li>The version of Kammunicate you are using</li>
+                <li>A description of what happened and what you expected to happen</li>
+                <li>Steps to reproduce the issue, if possible</li>
+            </ul>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Christopher Hardy. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
