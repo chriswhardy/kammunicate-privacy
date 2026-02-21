@@ -3,406 +3,736 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Kammunicate</title>
+    <title>Privacy Policy — Kammunicate</title>
+    <meta name="description" content="Privacy Policy for Kammunicate AAC communication app by Christopher Hardy.">
+    <meta name="robots" content="index, follow">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --color-bg: #ffffff;
+            --color-text: #1d1d1f;
+            --color-text-secondary: #515154;
+            --color-accent: #0071e3;
+            --color-accent-hover: #0077ED;
+            --color-border: #d2d2d7;
+            --color-surface: #f5f5f7;
+            --color-card: #fbfbfd;
+            --color-green: #34c759;
+            --color-red: #ff3b30;
+            --color-shield: #0071e3;
+            --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --max-width: 780px;
+            --radius: 12px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #000000;
+                --color-text: #f5f5f7;
+                --color-text-secondary: #a1a1a6;
+                --color-accent: #2997ff;
+                --color-accent-hover: #64b5ff;
+                --color-border: #38383a;
+                --color-surface: #1c1c1e;
+                --color-card: #1c1c1e;
+                --color-green: #30d158;
+                --color-red: #ff453a;
+                --color-shield: #2997ff;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f5f7;
-            padding: 20px;
+            font-family: var(--font-system);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.58;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 800px;
+        .site-header {
+            background: var(--color-surface);
+            border-bottom: 1px solid var(--color-border);
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            background: rgba(255,255,255,0.72);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .site-header { background: rgba(0,0,0,0.72); }
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
             margin: 0 auto;
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
-        h1 {
-            color: #1d1d1f;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            border-bottom: 3px solid #007aff;
-            padding-bottom: 15px;
+        .header-brand {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            letter-spacing: -0.01em;
         }
 
-        h2 {
-            color: #1d1d1f;
-            font-size: 1.8em;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            border-left: 4px solid #007aff;
-            padding-left: 15px;
+        .header-meta {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+        }
+
+        .content {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 48px 24px 80px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 56px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .hero-shield {
+            width: 64px;
+            height: 64px;
+            background: var(--color-shield);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+        }
+
+        .hero-shield svg {
+            width: 32px;
+            height: 32px;
+            fill: #fff;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+            max-width: 560px;
+            margin: 0 auto 20px;
+        }
+
+        .meta-badges {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 20px;
+            background: var(--color-surface);
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border);
+        }
+
+        .commitment {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 48px;
+        }
+
+        .commitment p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        .commitment strong { color: var(--color-text); }
+
+        .toc {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            columns: 2;
+            column-gap: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .toc ol { columns: 1; }
+        }
+
+        .toc li {
+            counter-increment: toc-counter;
+            margin-bottom: 8px;
+            break-inside: avoid;
+        }
+
+        .toc a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .toc a:hover {
+            color: var(--color-accent-hover);
+            text-decoration: underline;
+        }
+
+        .toc a::before {
+            content: counter(toc-counter) ". ";
+            color: var(--color-text-secondary);
+            font-weight: 400;
+        }
+
+        .section { margin-bottom: 48px; }
+        .section-anchor { scroll-margin-top: 80px; }
+
+        h2.section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--color-border);
         }
 
         h3 {
-            color: #424245;
-            font-size: 1.3em;
-            margin-top: 25px;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 8px;
         }
 
         p {
-            margin-bottom: 15px;
-            color: #1d1d1f;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            line-height: 1.65;
         }
 
-        ul {
-            margin-left: 30px;
-            margin-bottom: 15px;
+        ul, ol {
+            margin-bottom: 16px;
+            padding-left: 24px;
         }
 
         li {
             margin-bottom: 8px;
-            color: #1d1d1f;
+            font-size: 0.95rem;
+            line-height: 1.55;
         }
 
-        .highlight {
-            background-color: #e8f4ff;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #007aff;
-            margin: 20px 0;
+        li strong { font-weight: 600; }
+
+        .checklist { list-style: none; padding-left: 0; }
+
+        .checklist li {
+            padding-left: 28px;
+            position: relative;
         }
 
-        .warning {
-            background-color: #fff4e5;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #ff9500;
-            margin: 20px 0;
+        .checklist li::before {
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
-        .summary-box {
-            background-color: #f0f0f5;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 30px 0;
+        .checklist.negative li::before {
+            content: "\2716";
+            color: var(--color-red);
         }
 
-        .summary-box h2 {
-            margin-top: 0;
-            color: #007aff;
+        .checklist.positive li::before {
+            content: "\2714";
+            color: var(--color-green);
         }
 
-        .green-check {
-            color: #34c759;
-            font-weight: bold;
+        .info-card {
+            background: var(--color-card);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin: 16px 0;
         }
 
-        .red-cross {
-            color: #ff3b30;
-            font-weight: bold;
+        .info-card p:last-child { margin-bottom: 0; }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
         }
 
-        strong {
-            color: #1d1d1f;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+        }
+
+        thead { background: var(--color-surface); }
+
+        th {
+            text-align: left;
+            padding: 12px 16px;
             font-weight: 600;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--color-text-secondary);
+            border-bottom: 1px solid var(--color-border);
         }
 
-        .last-updated {
-            color: #86868b;
-            font-size: 0.9em;
-            margin-bottom: 30px;
+        td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--color-border);
+            vertical-align: top;
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid #d2d2d7;
-            margin: 40px 0;
-        }
+        tr:last-child td { border-bottom: none; }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #d2d2d7;
-            color: #86868b;
-            font-size: 0.9em;
+        code {
+            font-family: 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
+            font-size: 0.82em;
+            background: var(--color-surface);
+            padding: 2px 6px;
+            border-radius: 4px;
+            border: 1px solid var(--color-border);
         }
 
         a {
-            color: #007aff;
+            color: var(--color-accent);
             text-decoration: none;
         }
 
-        a:hover {
-            text-decoration: underline;
+        a:hover { text-decoration: underline; }
+
+        .summary-box {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 28px;
+            margin-top: 24px;
         }
 
+        .summary-box h3 {
+            margin-top: 20px;
+            font-size: 1rem;
+        }
+
+        .summary-box h3:first-child { margin-top: 0; }
+
+        .site-footer {
+            text-align: center;
+            padding: 32px 24px 48px;
+            border-top: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .site-footer p { font-size: 0.8rem; }
+
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
-            }
+            .hero h1 { font-size: 1.75rem; }
+            .hero .subtitle { font-size: 1rem; }
+            h2.section-title { font-size: 1.25rem; }
+            .content { padding: 32px 20px 60px; }
+        }
 
-            h1 {
-                font-size: 2em;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
+        @media print {
+            .site-header { position: static; background: none; }
+            .toc { break-after: page; }
+            .section { break-inside: avoid; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Privacy Policy for Kammunicate</h1>
-        <p class="last-updated"><strong>Last Updated:</strong> January 25, 2026</p>
 
-        <h2>Introduction</h2>
-        <p>Kammunicate is a privacy-first augmentative and alternative communication (AAC) application designed to help individuals with communication disabilities express their needs and thoughts. This Privacy Policy explains how Kammunicate collects, uses, and protects your information.</p>
+    <header class="site-header">
+        <div class="header-inner">
+            <span class="header-brand">Christopher Hardy</span>
+            <span class="header-meta">Privacy Policy v2.0</span>
+        </div>
+    </header>
 
-        <div class="highlight">
-            <p><strong>Our Privacy Commitment:</strong> Kammunicate is built with privacy as a core principle. All data processing happens entirely on your device. We do not transmit, collect, or store any of your personal information on external servers.</p>
+    <main class="content">
+
+        <div class="hero">
+            <div class="hero-shield">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+            </div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Kammunicate &mdash; Augmentative and Alternative Communication for iPad</p>
+            <div class="meta-badges">
+                <span class="badge">Last Updated: February 21, 2026</span>
+                <span class="badge">Version 2.0</span>
+            </div>
         </div>
 
-        <h2>Information We Collect</h2>
-        <p>Kammunicate collects and stores the following types of information <strong>locally on your device only</strong>:</p>
+        <div class="commitment">
+            <p><strong>Our Privacy Commitment:</strong> Kammunicate is built with privacy as a foundational design principle. All core data processing happens entirely on your device. We do not operate external servers, do not sell or share your data with third parties, and do not use any advertising or third-party analytics frameworks.</p>
+        </div>
 
-        <h3>1. Communication Content</h3>
-        <ul>
-            <li><strong>Drawings and handwriting:</strong> Created on the drawing canvas using Apple Pencil or finger input</li>
-            <li><strong>Communication cards:</strong> Cards selected from the built-in library</li>
-            <li><strong>Photos:</strong> Images captured via camera or selected from your photo library</li>
-            <li><strong>Voice recordings:</strong> Audio messages recorded using your device's microphone</li>
-            <li><strong>Stickers:</strong> Visual stickers added to messages</li>
-            <li><strong>Communication history:</strong> A chronological record of all messages sent between players, including timestamps and associated media</li>
-        </ul>
+        <nav class="toc">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#information-we-collect">Information We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Information</a></li>
+                <li><a href="#storage-security">Data Storage &amp; Security</a></li>
+                <li><a href="#third-parties">Data Sharing &amp; Third Parties</a></li>
+                <li><a href="#remote-carer">Remote Carer Feature &amp; CloudKit</a></li>
+                <li><a href="#permissions">Permissions We Request</a></li>
+                <li><a href="#children">Children's Privacy</a></li>
+                <li><a href="#your-rights">Your Privacy Rights &amp; Controls</a></li>
+                <li><a href="#health">Health-Related Features</a></li>
+                <li><a href="#machine-learning">Machine Learning Systems</a></li>
+                <li><a href="#legal">Legal Compliance</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ol>
+        </nav>
 
-        <h3>2. Personalization Data</h3>
-        <ul>
-            <li><strong>Avatar information:</strong> Custom avatars (letters, icons, or photos) created for each player</li>
-            <li><strong>Player names:</strong> Custom names assigned to each player (defaults: "Person" and "Carer")</li>
-            <li><strong>Role settings:</strong> Player role assignments (Needs Expresser or Support Provider)</li>
-            <li><strong>Preference settings:</strong> App customization choices including Easy Read mode and ambient music preferences</li>
-        </ul>
+        <div class="section">
+            <p>This Privacy Policy explains what information <strong>Kammunicate</strong> (the &ldquo;App&rdquo;) collects, how it is used, stored, and protected. Kammunicate is an iPad application designed to support individuals with communication disabilities through augmentative and alternative communication (AAC).</p>
+            <p><strong>Developer:</strong> Christopher Hardy<br>
+            <strong>Bundle Identifier:</strong> <code>com.sentientcaregroup.Kammunicate</code></p>
+        </div>
 
-        <h3>3. Machine Learning Data</h3>
-        <ul>
-            <li><strong>Usage patterns:</strong> Which communication cards are used together and in what sequences</li>
-            <li><strong>Card effectiveness:</strong> Which suggestions are accepted or dismissed</li>
-            <li><strong>Contextual preferences:</strong> Time-of-day usage patterns and topic preferences</li>
-            <li><strong>Drawing analysis data:</strong> Automated analysis of drawings to suggest relevant communication cards</li>
-            <li><strong>Engagement metrics:</strong> Session duration, message frequency, and interaction patterns (used for the Professional Learning Dashboard)</li>
-        </ul>
+        <div class="section" id="information-we-collect">
+            <h2 class="section-title">1. Information We Collect</h2>
+            <p>The App collects and stores the following types of information. Unless explicitly noted under the Remote Carer feature (<a href="#remote-carer">Section 5</a>), all data is stored <strong>locally on your device only</strong>.</p>
 
-        <h3>4. Technical Data</h3>
-        <ul>
-            <li><strong>App version information:</strong> Current version of Kammunicate installed</li>
-            <li><strong>Crash recovery data:</strong> Saved drafts to restore your work after unexpected app closures</li>
-        </ul>
-
-        <h2>How We Use Your Information</h2>
-        <p>All information collected by Kammunicate is used <strong>exclusively on your device</strong> for the following purposes:</p>
-
-        <h3>Personalization and Machine Learning</h3>
-        <ul>
-            <li><strong>Smart suggestions:</strong> Six complementary machine learning systems analyze your usage patterns to suggest relevant communication cards</li>
-            <li><strong>Pattern recognition:</strong> Learning which cards work best in different contexts and times of day</li>
-            <li><strong>Handwriting recognition:</strong> Converting handwritten text into communication suggestions using Apple's Vision framework</li>
-            <li><strong>Drawing analysis:</strong> Identifying objects and intentions in drawings to suggest appropriate cards</li>
-            <li><strong>Conversation memory:</strong> Maintaining context from recent messages (last 10 messages) to improve suggestion relevance</li>
-        </ul>
-
-        <h3>Analytics for Caregivers</h3>
-        <ul>
-            <li><strong>Professional Learning Dashboard:</strong> Providing insights to caregivers about communication patterns, frequently used topics, and engagement levels</li>
-            <li><strong>Progress tracking:</strong> Monitoring communication growth and identifying areas of focus</li>
-        </ul>
-
-        <h3>App Functionality</h3>
-        <ul>
-            <li><strong>Communication history:</strong> Enabling users to review past conversations and communication patterns</li>
-            <li><strong>Draft recovery:</strong> Restoring unsaved work if the app closes unexpectedly</li>
-            <li><strong>Avatar display:</strong> Showing personalized avatars in the communication interface</li>
-        </ul>
-
-        <h2>Data Storage and Security</h2>
-
-        <h3>Local Storage Only</h3>
-        <ul>
-            <li><strong>No cloud sync:</strong> All data remains exclusively on your device</li>
-            <li><strong>No external servers:</strong> Kammunicate does not connect to any external servers or transmit data over the internet</li>
-            <li><strong>Sandbox storage:</strong> All data is stored in the app's secure sandbox using Apple's UserDefaults and local file storage</li>
-        </ul>
-
-        <h3>Data Retention</h3>
-        <ul>
-            <li><strong>Communication history:</strong> Stored indefinitely until manually deleted by the user</li>
-            <li><strong>Engagement logs:</strong> Retained for analytics purposes; old events (30+ days) may be automatically cleared</li>
-            <li><strong>Machine learning models:</strong> Continuously updated based on recent usage patterns</li>
-            <li><strong>Avatars and settings:</strong> Persist until changed or deleted by the user</li>
-        </ul>
-
-        <h3>Device Backup</h3>
-        <ul>
-            <li><strong>iCloud/iTunes backups:</strong> Your Kammunicate data may be included in device backups if you have iCloud or iTunes backup enabled</li>
-            <li><strong>Backup control:</strong> You can manage backup settings through your device's Settings app</li>
-        </ul>
-
-        <h2>Data Sharing and Third Parties</h2>
-        <div class="highlight">
-            <p><strong>We do not share, sell, or transmit your data to any third parties.</strong> Kammunicate operates entirely offline and does not:</p>
+            <h3>1.1 Communication Content</h3>
             <ul>
-                <li>Send data to external servers</li>
-                <li>Share information with advertisers</li>
-                <li>Transmit data to analytics services</li>
+                <li><strong>Drawings and handwriting:</strong> Created on the drawing canvas using Apple Pencil or touch input</li>
+                <li><strong>Communication cards:</strong> Cards selected from the built-in library of 150+ cards across 11+ categories</li>
+                <li><strong>Photos:</strong> Images captured via camera or selected from your photo library, stored locally as JPEG files</li>
+                <li><strong>Stickers:</strong> Visual stickers added to communication messages</li>
+                <li><strong>Communication history:</strong> A chronological record of all messages exchanged, including timestamps and associated media</li>
+            </ul>
+
+            <h3>1.2 Personalisation Data</h3>
+            <ul>
+                <li><strong>Avatar information:</strong> Custom avatars created for each participant</li>
+                <li><strong>Player names:</strong> Custom names assigned to each participant</li>
+                <li><strong>Role settings:</strong> Role assignments (Needs Expresser or Support Provider)</li>
+                <li><strong>Preference settings:</strong> App customisation choices including Easy Read mode, ambient music preferences, colour selections, and brush sizes</li>
+            </ul>
+
+            <h3>1.3 Machine Learning &amp; Analytics Data</h3>
+            <ul>
+                <li><strong>Usage patterns:</strong> Which communication cards are used together and in what sequences</li>
+                <li><strong>Card effectiveness:</strong> Which suggestions are accepted or dismissed</li>
+                <li><strong>Contextual preferences:</strong> Time-of-day usage patterns and topic preferences</li>
+                <li><strong>Drawing analysis data:</strong> Automated analysis of drawings to suggest relevant communication cards</li>
+                <li><strong>Engagement metrics:</strong> Session duration, message frequency, and interaction patterns for the on-device Professional Learning Dashboard</li>
+                <li><strong>Drawing training samples:</strong> Up to 500 samples stored locally for improving drawing recognition</li>
+            </ul>
+
+            <h3>1.4 Technical Data</h3>
+            <ul>
+                <li><strong>App version information:</strong> Current version installed on your device</li>
+                <li><strong>Crash recovery data:</strong> Saved message drafts to restore your work after unexpected app closures</li>
+                <li><strong>Network status:</strong> Connectivity state monitored locally to manage the Remote Carer feature</li>
+            </ul>
+        </div>
+
+        <div class="section" id="how-we-use">
+            <h2 class="section-title">2. How We Use Your Information</h2>
+            <p>All information is used <strong>exclusively to provide and improve the App's functionality</strong>. We do not use your information for advertising, profiling, or any purpose unrelated to communication support.</p>
+
+            <h3>2.1 Communication</h3>
+            <ul>
+                <li>Displaying, storing, and retrieving messages between communicators and carers</li>
+                <li>Maintaining communication history for review</li>
+                <li>Recovering unsaved drafts if the app closes unexpectedly</li>
+            </ul>
+
+            <h3>2.2 Personalisation and Machine Learning</h3>
+            <p>All machine learning runs entirely on your device using Apple's native frameworks:</p>
+            <ul>
+                <li><strong>Smart card suggestions:</strong> On-device machine learning systems analyse usage patterns to suggest relevant communication cards</li>
+                <li><strong>Pattern recognition:</strong> Learning which cards work best in different contexts and times of day</li>
+                <li><strong>Handwriting recognition:</strong> Converting handwritten text into communication suggestions using Apple's Vision framework</li>
+                <li><strong>Drawing analysis:</strong> Identifying objects and intentions in drawings to suggest appropriate communication cards</li>
+            </ul>
+
+            <h3>2.3 Caregiver Insights</h3>
+            <ul>
+                <li><strong>Professional Learning Dashboard:</strong> On-device insights about communication patterns, frequently used topics, and engagement levels</li>
+                <li><strong>Health pattern indicators:</strong> Detecting potential health-related patterns from communication content, processed locally</li>
+                <li><strong>Progress tracking:</strong> Monitoring communication growth and identifying areas of focus</li>
+            </ul>
+        </div>
+
+        <div class="section" id="storage-security">
+            <h2 class="section-title">3. Data Storage &amp; Security</h2>
+
+            <h3>3.1 Local Storage</h3>
+            <ul>
+                <li><strong>Primary storage:</strong> All core data is stored in the app's secure sandbox using Apple's UserDefaults, local file storage, and the iOS Keychain</li>
+                <li><strong>File protection:</strong> Sensitive files use iOS Complete File Protection</li>
+                <li><strong>No external databases:</strong> The App does not maintain any external databases or server infrastructure</li>
+            </ul>
+
+            <h3>3.2 Encryption</h3>
+            <h4>On-Device Encryption</h4>
+            <ul>
+                <li><strong>At rest:</strong> All data benefits from iOS device-level encryption</li>
+                <li><strong>Keychain storage:</strong> Cryptographic keys are stored in the iOS Keychain with device-only protection</li>
+            </ul>
+            <h4>Remote Carer Encryption (when enabled)</h4>
+            <ul>
+                <li><strong>Algorithm:</strong> AES-GCM (Advanced Encryption Standard, Galois/Counter Mode)</li>
+                <li><strong>Key exchange:</strong> ECDH with P256 curves</li>
+                <li><strong>Key derivation:</strong> HKDF-SHA256 with deterministic salt generation</li>
+                <li><strong>Key lifecycle:</strong> Unique keys per carer pairing, permanently deleted when unpaired</li>
+            </ul>
+
+            <h3>3.3 Data Retention</h3>
+            <ul>
+                <li><strong>Communication history:</strong> Stored until manually deleted by the user</li>
+                <li><strong>Engagement logs:</strong> Events older than 30 days are automatically cleared</li>
+                <li><strong>Machine learning models:</strong> Continuously updated; drawing training samples capped at 500</li>
+                <li><strong>Pairing invitations:</strong> Automatically expire after 24 hours and are single-use</li>
+            </ul>
+        </div>
+
+        <div class="section" id="third-parties">
+            <h2 class="section-title">4. Data Sharing &amp; Third Parties</h2>
+            <p><strong>We do not share, sell, rent, or transmit your data to any third parties.</strong> The App does not:</p>
+            <ul class="checklist negative">
+                <li>Send data to external servers operated by us or any third party</li>
+                <li>Share information with advertisers or ad networks</li>
+                <li>Transmit data to analytics or tracking services</li>
                 <li>Connect to social media platforms</li>
-                <li>Use third-party tracking tools</li>
+                <li>Use any third-party SDKs, libraries, or tracking tools</li>
+                <li>Contain any third-party code</li>
+            </ul>
+
+            <h3>4.1 Apple Services</h3>
+            <p>The App uses the following Apple-provided services, governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Apple Service</th>
+                            <th>Purpose</th>
+                            <th>Data Involved</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>CloudKit</strong> (optional)</td>
+                            <td>Sync messages between paired devices via Remote Carer feature</td>
+                            <td>Encrypted messages, carer records, pairing invitations</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Push Notifications</strong> (optional)</td>
+                            <td>Notify companion devices of new messages</td>
+                            <td>Push tokens managed by Apple</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MusicKit</strong> (optional)</td>
+                            <td>Play calming ambient background music</td>
+                            <td>No music data stored</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Core ML / Vision / NL</strong></td>
+                            <td>On-device machine learning</td>
+                            <td>No data leaves device</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section" id="remote-carer">
+            <h2 class="section-title">5. Remote Carer Feature &amp; CloudKit</h2>
+
+            <h3>5.1 Overview</h3>
+            <p>Kammunicate includes an <strong>optional</strong> Remote Carer feature that allows a support person using the Kampanion companion app to exchange messages with the communicator. This is the <strong>only feature that transmits data beyond your local device</strong>.</p>
+
+            <h3>5.2 How Pairing Works</h3>
+            <ul>
+                <li>A pairing invitation is created on the Kammunicate iPad, generating a QR code and a 6-character pairing code</li>
+                <li>The remote carer scans or enters the code in the Kampanion app</li>
+                <li>Pairing codes expire after <strong>24 hours</strong> and are <strong>single-use</strong></li>
+                <li>No email addresses, phone numbers, passwords, or account creation are required</li>
+            </ul>
+
+            <h3>5.3 What Data Is Synced</h3>
+            <ul>
+                <li>Encrypted message content (drawings, card references, photos, text)</li>
+                <li>Carer records (identifier, avatar, online status)</li>
+                <li>Pairing invitations and device presence information</li>
+            </ul>
+
+            <h3>5.4 Security Measures</h3>
+            <ul>
+                <li><strong>End-to-end encryption:</strong> All message content encrypted with AES-GCM before storage in CloudKit</li>
+                <li><strong>Rate limiting:</strong> Maximum 30 messages per minute</li>
+                <li><strong>Key deletion:</strong> All encryption keys permanently destroyed when a carer is unpaired</li>
+            </ul>
+
+            <h3>5.5 Disabling</h3>
+            <p>You can unpair any remote carer at any time. If you do not use this feature, <strong>no data is transmitted beyond your device</strong>.</p>
+        </div>
+
+        <div class="section" id="permissions">
+            <h2 class="section-title">6. Permissions We Request</h2>
+            <p>All permissions are optional. The App will function without granting them, though certain features will be unavailable.</p>
+            <ul>
+                <li><strong>Camera:</strong> Capture photos for messages and scan QR codes for pairing</li>
+                <li><strong>Photo Library:</strong> Select existing photos for communication messages</li>
+                <li><strong>Microphone:</strong> Record voice messages</li>
+                <li><strong>Apple Music:</strong> Play calming background music</li>
+                <li><strong>Push Notifications:</strong> Receive real-time messages from remote carers</li>
+            </ul>
+            <div class="info-card">
+                <p>Manage all permissions at any time through <strong>Settings &gt; Kammunicate</strong> on your device.</p>
+            </div>
+        </div>
+
+        <div class="section" id="children">
+            <h2 class="section-title">7. Children's Privacy</h2>
+            <p>Kammunicate may be used by children with communication disabilities. We take children's privacy seriously.</p>
+            <ul>
+                <li><strong>No personal information collection:</strong> The App does not collect personal information requiring parental consent under COPPA</li>
+                <li><strong>Local processing only:</strong> All data remains on the device under the parent or guardian's control</li>
+                <li><strong>No online communication with strangers:</strong> The Remote Carer feature only permits communication between deliberately paired devices</li>
+                <li><strong>Supervision recommended:</strong> Parents or guardians should supervise the use of the App by children</li>
             </ul>
         </div>
 
-        <h3>On-Device Processing</h3>
-        <p>All machine learning and data analysis is performed using:</p>
-        <ul>
-            <li><strong>Apple Core ML:</strong> On-device machine learning framework</li>
-            <li><strong>Apple Vision:</strong> On-device handwriting and image recognition</li>
-            <li><strong>Apple Natural Language:</strong> On-device sentiment analysis and text processing</li>
-        </ul>
-        <p>No data from these analyses leaves your device.</p>
-
-        <h2>Your Privacy Rights and Controls</h2>
-
-        <h3>Access and Review</h3>
-        <p>You can access all your data through the app:</p>
-        <ul>
-            <li><strong>Communication History:</strong> View all past messages via the History button</li>
-            <li><strong>Professional Learning Dashboard:</strong> Review analytics and engagement patterns</li>
-            <li><strong>Settings:</strong> View and modify player names, roles, and preferences</li>
-        </ul>
-
-        <h3>Data Deletion</h3>
-        <p>Currently, you can delete data through:</p>
-        <ul>
-            <li><strong>Individual messages:</strong> Long-press on history entries to delete specific communications</li>
-            <li><strong>Avatars:</strong> Delete custom avatars through the avatar management interface</li>
-            <li><strong>App deletion:</strong> Removing Kammunicate from your device permanently deletes all associated data</li>
-        </ul>
-
-        <div class="warning">
-            <p><strong>Note:</strong> We are working on adding bulk data deletion features in future updates, including:</p>
+        <div class="section" id="your-rights">
+            <h2 class="section-title">8. Your Privacy Rights &amp; Controls</h2>
+            <h3>Access and Review</h3>
+            <p>You can access all your data directly within the App through Communication History, the Professional Learning Dashboard, and Settings.</p>
+            <h3>Data Deletion</h3>
             <ul>
-                <li>Delete all communication history</li>
-                <li>Clear all engagement logs</li>
-                <li>Reset all settings and preferences</li>
+                <li>Delete individual messages via long-press on history entries</li>
+                <li>Delete custom avatars through the avatar management interface</li>
+                <li>Unpair carers to delete synced data and encryption keys</li>
+                <li>Remove the App to permanently delete all locally stored data</li>
+            </ul>
+            <h3>Right to Be Forgotten</h3>
+            <p>Because the App does not store data on external servers (aside from optional CloudKit sync via your own iCloud account), deleting the App effectively exercises your right to erasure.</p>
+        </div>
+
+        <div class="section" id="health">
+            <h2 class="section-title">9. Health-Related Features</h2>
+            <p>Kammunicate includes on-device health pattern detection that analyses <strong>communication content only</strong> to identify potential health-related indicators such as pain expressions or changes in engagement levels.</p>
+            <ul>
+                <li>The App does <strong>not</strong> access Apple HealthKit or any health records</li>
+                <li>Health pattern indicators are inferred from communication content and processed locally</li>
+                <li>These indicators are observational tools for caregivers and are <strong>not medical advice</strong></li>
             </ul>
         </div>
 
-        <h2>Permissions We Request</h2>
-        <p>Kammunicate requests the following permissions to provide core functionality:</p>
-
-        <h3>Camera Access</h3>
-        <ul>
-            <li><strong>Purpose:</strong> To capture photos for communication messages</li>
-            <li><strong>Permission prompt:</strong> "Kammunicate needs camera access to take photos for messages"</li>
-            <li><strong>Data handling:</strong> Photos are stored locally on your device only</li>
-        </ul>
-
-        <h3>Microphone Access</h3>
-        <ul>
-            <li><strong>Purpose:</strong> To record voice messages for communication</li>
-            <li><strong>Permission prompt:</strong> "Kammunicate needs microphone access to record voice messages"</li>
-            <li><strong>Data handling:</strong> Audio recordings are stored locally on your device only</li>
-        </ul>
-
-        <h3>Photo Library Access</h3>
-        <ul>
-            <li><strong>Purpose:</strong> To add existing photos from your library to messages</li>
-            <li><strong>Permission prompt:</strong> "Kammunicate needs photo library access to add photos to messages"</li>
-            <li><strong>Data handling:</strong> Selected photos are copied and stored locally within the app</li>
-        </ul>
-
-        <h3>Apple Music Access</h3>
-        <ul>
-            <li><strong>Purpose:</strong> To play calming background music during communication sessions</li>
-            <li><strong>Permission prompt:</strong> "Kammunicate uses Apple Music to play calming background music during communication sessions"</li>
-            <li><strong>Data handling:</strong> No music data is stored; only playback control</li>
-        </ul>
-
-        <p><strong>You can manage these permissions at any time through your device's Settings → Kammunicate.</strong></p>
-
-        <h2>Children's Privacy</h2>
-        <p>Kammunicate is designed to assist individuals with communication disabilities, which may include children. We take children's privacy seriously:</p>
-
-        <h3>Parental Guidance</h3>
-        <ul>
-            <li><strong>Parental supervision:</strong> We recommend that parents or guardians supervise the use of Kammunicate by children</li>
-            <li><strong>Privacy protection:</strong> No personal information is transmitted off the device</li>
-            <li><strong>Photo safety:</strong> Parents should review and approve any photos captured or used in the app</li>
-        </ul>
-
-        <h3>COPPA Compliance (United States)</h3>
-        <ul>
-            <li><strong>No data collection:</strong> Kammunicate does not collect personal information from children in a manner that would require parental consent under COPPA</li>
-            <li><strong>Local processing only:</strong> All data remains on the device under the parent/guardian's control</li>
-            <li><strong>No online features:</strong> The app does not include chat, forums, or other online communication features</li>
-        </ul>
-
-        <h2>Contact Information</h2>
-        <p>If you have questions, concerns, or requests regarding this Privacy Policy or your privacy rights, please contact us:</p>
-        <ul>
-            <li><strong>Email:</strong> [Your Contact Email]</li>
-            <li><strong>GitHub:</strong> [Your GitHub Profile/Repository]</li>
-        </ul>
-
-        <h2>Legal Compliance</h2>
-
-        <h3>Data Protection Laws</h3>
-        <p>Kammunicate's privacy-first, on-device architecture complies with major privacy regulations including:</p>
-        <ul>
-            <li><strong>GDPR</strong> (General Data Protection Regulation - European Union)</li>
-            <li><strong>CCPA</strong> (California Consumer Privacy Act)</li>
-            <li><strong>COPPA</strong> (Children's Online Privacy Protection Act)</li>
-        </ul>
-        <p>Since all data processing occurs locally on your device and no information is transmitted to external parties, many data protection requirements related to external data processing do not apply.</p>
-
-        <hr>
-
-        <div class="summary-box">
-            <h2>Summary</h2>
-
-            <p><strong>What we collect:</strong> Communication content, personalization data, and usage patterns - all stored locally on your device.</p>
-
-            <p><strong>What we don't do:</strong></p>
-            <ul>
-                <li><span class="red-cross">✗</span> Send data to external servers</li>
-                <li><span class="red-cross">✗</span> Share information with third parties</li>
-                <li><span class="red-cross">✗</span> Use tracking or advertising tools</li>
-                <li><span class="red-cross">✗</span> Require account creation or login</li>
-            </ul>
-
-            <p><strong>What makes Kammunicate private:</strong></p>
-            <ul>
-                <li><span class="green-check">✓</span> 100% on-device processing</li>
-                <li><span class="green-check">✓</span> No internet connection required</li>
-                <li><span class="green-check">✓</span> No external data transmission</li>
-                <li><span class="green-check">✓</span> Complete user control over data</li>
-            </ul>
-
-            <p><strong>Your rights:</strong></p>
-            <ul>
-                <li>Access all your data within the app</li>
-                <li>Delete individual items or the entire app</li>
-                <li>Control permissions through device settings</li>
-                <li>Use the app completely offline</li>
-            </ul>
+        <div class="section" id="machine-learning">
+            <h2 class="section-title">10. Machine Learning Systems</h2>
+            <p>Kammunicate uses complementary on-device machine learning systems running entirely on your device using Apple Core ML, including card prediction, contextual analysis, semantic grouping, drawing analysis, and real-time learning.</p>
+            <div class="info-card">
+                <p><strong>All training and inference happens on your device.</strong> No training data, model weights, or usage patterns are transmitted externally. You can reset the learning models at any time through settings.</p>
+            </div>
         </div>
 
-        <footer>
-            <p>This privacy policy is provided in good faith to inform users about data practices.<br>By using Kammunicate, you acknowledge that you have read and understood this policy.</p>
-            <p style="margin-top: 20px;">© 2026 Kammunicate. All rights reserved.</p>
-        </footer>
-    </div>
+        <div class="section" id="legal">
+            <h2 class="section-title">11. Legal Compliance</h2>
+            <p>The App's privacy-first, on-device architecture supports compliance with GDPR, UK GDPR, CCPA/CPRA, COPPA, PIPEDA, and the Australian Privacy Act. Since all data processing occurs locally, many requirements related to external data processing do not apply.</p>
+        </div>
+
+        <div class="section" id="changes">
+            <h2 class="section-title">12. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy to reflect changes in features, legal requirements, or privacy best practices. Material changes will be highlighted in App Store release notes. Your continued use of the App constitutes acceptance of the updated policy.</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Version</th><th>Date</th><th>Changes</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2.0</td>
+                            <td>February 21, 2026</td>
+                            <td>Added Remote Carer/CloudKit disclosure, health pattern detection, expanded legal compliance</td>
+                        </tr>
+                        <tr>
+                            <td>1.0</td>
+                            <td>January 25, 2026</td>
+                            <td>Initial privacy policy</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section" id="contact">
+            <h2 class="section-title">13. Contact Information</h2>
+            <p>If you have questions, concerns, or requests regarding this Privacy Policy or your privacy rights, please contact us:</p>
+            <div class="info-card">
+                <p><strong>Developer:</strong> Christopher Hardy<br>
+                <strong>Email:</strong> <a href="mailto:chriswhardy@me.com">chriswhardy@me.com</a></p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>This privacy policy is provided in good faith to inform users about data practices within Kammunicate.<br>
+        By using the App, you acknowledge that you have read and understood this policy.</p>
+        <p>&copy; 2026 Christopher Hardy. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
